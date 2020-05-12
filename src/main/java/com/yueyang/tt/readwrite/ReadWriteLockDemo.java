@@ -29,7 +29,6 @@ public class ReadWriteLockDemo {
         //使用读锁
 
         readWriteLock.readLock().lock();
-
         try {
             System.out.println(Thread.currentThread().getName() + ":  " + number);
         } finally {
