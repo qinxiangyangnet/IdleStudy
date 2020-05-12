@@ -18,14 +18,21 @@ public class ParseJwtToken {
      */
     public static void main(String[] args) {
 
+        String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTEiLCJzdWIiOiLlsI_lsI8iLCJpYXQiOjE1ODkyNjkyNzcsImNvbXBhbnlJZCI6IjEyMyIsImNvbXBhbnlOYW1lIjoiaGFoYWgifQ.NNdwotMOwOVXBQ73RDaUDLW5BYQTPRiXYuYjWDAr2d0";
+
         Claims ihrm = Jwts.parser().setSigningKey("ihrm")
-                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTEiLCJzdWIiOiLlsI_lsI8iLCJpYXQiOjE1ODkyNjg4NzJ9.Hva-b_UDatPZqdsLpGnAbTj8dw1tABzKI82fWSs-JW4").getBody();
+                .parseClaimsJws(token).getBody();
 
 
         System.out.println(ihrm.getId());
         ;
         System.out.println(ihrm.getSubject());
         System.out.println(ihrm.getIssuedAt());
+
+        //解析自定义cliam的内容
+        String companyId = (String) ihrm.get("companyId");
+        String companyName = (String) ihrm.get("companyName");
+        System.out.println(companyId+companyName);
 
     }
 }

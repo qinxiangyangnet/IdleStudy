@@ -25,10 +25,11 @@ public class CreatJwtTest {
         /**
          * token生成
          */
-        JwtBuilder jwtBuilder = Jwts.builder().setId("111").setSubject("小小").setIssuedAt(new Date()).signWith(SignatureAlgorithm.HS256, "ihrm");
+        JwtBuilder jwtBuilder = Jwts.builder().setId("111").setSubject("小小").setIssuedAt(new Date()
+        ).signWith(SignatureAlgorithm.HS256, "ihrm")
+                .claim("companyId", "123")
+                .claim("companyName", "hahah");
         String token = jwtBuilder.compact();
         System.out.println(token);
-
-
     }
 }
