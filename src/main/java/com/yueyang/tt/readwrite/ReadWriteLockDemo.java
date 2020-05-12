@@ -2,6 +2,7 @@ package com.yueyang.tt.readwrite;
 
 import sun.misc.Unsafe;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
