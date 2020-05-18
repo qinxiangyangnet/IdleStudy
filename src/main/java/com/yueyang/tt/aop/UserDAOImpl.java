@@ -6,7 +6,7 @@ package com.yueyang.tt.aop;
  * @author: qinxiangyang
  * @create: 2020-05-18 13:08
  **/
-public class UserDAOImpl {
+public class UserDAOImpl implements UserDAO {
 
 
     public void save() {
