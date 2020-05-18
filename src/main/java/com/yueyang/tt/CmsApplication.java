@@ -3,8 +3,8 @@ package com.yueyang.tt;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-
-import java.util.concurrent.CountDownLatch;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @program: IdleStudy
@@ -14,6 +14,8 @@ import java.util.concurrent.CountDownLatch;
  **/
 @SpringBootApplication
 @EnableConfigurationProperties
+@ComponentScan(basePackages = "com.yueyang")
+@ServletComponentScan
 public class CmsApplication {
     public static void main(String[] args) {
         SpringApplication.run(CmsApplication.class, args);

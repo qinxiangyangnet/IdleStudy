@@ -1,0 +1,7 @@
+spring:
+  aop:
+    auto: true
+  application:
+    name: idle_study
+server:
+  port: 9007
