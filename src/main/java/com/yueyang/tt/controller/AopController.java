@@ -26,6 +26,7 @@ public class AopController {
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @ApiOperation(value = "hello", notes = "hello", httpMethod = "GET")
     public String sayHello(String name) {
+        System.out.println("实际方法执行");
         return "hello" + name;
     }
 }

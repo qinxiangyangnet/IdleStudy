@@ -1,6 +1,7 @@
 package com.yueyang.tt.aop;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,10 +23,8 @@ import java.util.Arrays;
  * aspectjrt和aspectjweaver是与aspectj相关的包,用来支持切面编程的；
  * aspectjrt包是aspectj的runtime包；
  * aspectjweaver是aspectj的织入包；
- *
- *  @Pointcut定义的切入点为com.example.aop包下的所有函数做切人，
- *  通过 @Before实现切入点的前置通知，
- *  通过 @AfterReturning记录请求返回的对象。
+ * @Pointcut定义的切入点为com.example.aop包下的所有函数做切人， 通过 @Before实现切入点的前置通知，
+ * 通过 @AfterReturning记录请求返回的对象。
  * @author: qinxiangyang
  * @create: 2020-05-18 10:56
  **/
@@ -70,6 +69,24 @@ public class WebLogAcpect {
         logger.info("RESPONSE : " + ret);
     }
 
+    @After("webLog()")
+    public void doAfter() {
+        logger.info("切点之后执行");
+
+    }
+
+    @Around("webLog()")
+    public Object doArround(ProceedingJoinPoint joinPoint) throws Throwable {
+
+        logger.info("开始前执行-----");
+
+        Object proceed = joinPoint.proceed();
+        logger.info("结束后执行-----");
+
+
+        return proceed;
+
+    }
 
 
 }
