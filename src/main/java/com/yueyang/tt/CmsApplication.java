@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @program: IdleStudy
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableConfigurationProperties
 @ComponentScan(basePackages = "com.yueyang")
 @ServletComponentScan
+@EnableScheduling
 public class CmsApplication {
     public static void main(String[] args) {
         SpringApplication.run(CmsApplication.class, args);
