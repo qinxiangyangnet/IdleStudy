@@ -15,7 +15,7 @@ import java.util.Date;
 public class ScheduleDemo {
 
 
-    @Scheduled(cron = "0/2 * *  * * *")
+    @Scheduled(cron = "2 35 *  * * *")
     public void scheduleMethod() {
         System.out.println("schedule测试" + new Date());
     }
