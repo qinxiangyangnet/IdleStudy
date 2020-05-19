@@ -44,10 +44,16 @@
             <artifactId>lombok</artifactId>
             <version>1.16.18</version>
         </dependency>
-
+        <!--scheduled-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <!--quartz-->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.1</version>
         </dependency>
 
         <!--aop-->
