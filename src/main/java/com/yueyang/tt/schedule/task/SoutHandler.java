@@ -28,6 +28,7 @@ private  static Logger  logger= LoggerFactory.getLogger(SoutHandler.class);
     public ReturnT<String> execute(String param) throws Exception {
         XxlJobLogger.log("xxlJOb调度测试---------------" + new Date(),param);
         System.out.println("xxlJOb---------------" + new Date()+param);
+
         logger.info("xxlJOb---------------" + new Date()+param);
         return ReturnT.SUCCESS;
     }
