@@ -44,7 +44,6 @@ public class CircularDependence {
         
         //初始化Spring容器
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-        String[] beanNamesForAnnotation = ac.getBeanNamesForAnnotation(Component.class);
 
         IndexService bean = ac.getBean(IndexService.class);
         System.out.println(bean);
