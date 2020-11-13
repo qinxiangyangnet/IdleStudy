@@ -115,6 +115,10 @@
             <artifactId>okhttp</artifactId>
             <version>3.11.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
 
     </dependencies>
     <build>
